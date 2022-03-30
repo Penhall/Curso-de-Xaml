@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContatosDesktop"
+        xmlns:uc="clr-namespace:ContatosDesktop.Controls"
+
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
             <Button Content="Novo Contato" Click="Button_Click"/>
@@ -13,13 +15,15 @@
             <TextBox Margin="0,5,0,5" TextChanged="TextBox_TextChanged" />
           
             <ListView x:Name="ContactsListView"  Margin="0,0,0,5" Height="280" SelectionChanged="ContactsListView_SelectionChanged">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Name}"  FontSize="20" FontWeight="Bold" />
-                            <TextBlock  Text="{Binding Email}" FontSize="15" Foreground="DodgerBlue"/>
-                            <TextBlock  Text="{Binding Fone}"  FontSize="15" FontStyle="Italic"/>
-                        </StackPanel>
+                        <uc:ContactControl Contact="{Binding}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 

@@ -10,7 +10,7 @@ namespace CalculadoraApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        double lastNumber,  result;
+        double lastNumber, result;
 
         SelectedOperator selectedOperator;
         public MainWindow()
@@ -130,8 +130,8 @@ namespace CalculadoraApp
         private void BtnAC_Click(object sender, RoutedEventArgs e)
         {
             lblResult.Content = "0";
-            result=0;
-            lastNumber= 0;
+            result = 0;
+            lastNumber = 0;
 
         }
 

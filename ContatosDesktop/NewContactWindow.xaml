@@ -5,14 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContatosDesktop"
         mc:Ignorable="d"
-        Title="Novo Contato" Height="300" Width="300">
+        Title="Novo Contato" Height="300" Width="300"  WindowStartupLocation="CenterOwner" WindowStyle="None">
     <Grid>
         <StackPanel Margin="10">
+            
+            <TextBlock Text="Name"/>        
             <TextBox x:Name="nameTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Email"/>
             <TextBox x:Name="emailTextBox" Margin="0,0,0,5"/>
+
+            <TextBlock Text="Celular"/>
             <TextBox x:Name="foneTextBox" Margin="0,0,0,5"/>
             <Button Content="Save" Click="Button_Click"/>
-
 
         </StackPanel>
     </Grid>

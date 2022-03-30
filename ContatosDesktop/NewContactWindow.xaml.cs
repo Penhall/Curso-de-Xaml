@@ -12,19 +12,23 @@ namespace ContatosDesktop
         public NewContactWindow()
         {
             InitializeComponent();
+
+            Owner = Application.Current.MainWindow;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            Contact  contact = new Contact()
+            Contact contact = new Contact()
             {
                 Name = nameTextBox.Text,
                 Email = emailTextBox.Text,
                 Fone = foneTextBox.Text
             };
 
-            using (SQLiteConnection connection =new SQLiteConnection(App.databasePath)){
+            using (SQLiteConnection connection = new SQLiteConnection(App.databasePath))
+            {
 
                 connection.CreateTable<Contact>();
                 connection.Insert(contact);
